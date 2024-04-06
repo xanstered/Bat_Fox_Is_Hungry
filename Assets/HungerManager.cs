@@ -35,5 +35,8 @@ public class HungerManager : MonoBehaviour
 
         if (_currentHunger > _maxHunger) _currentHunger = _maxHunger;
     }
-
+    public void AddHunger(float _value)
+    {
+        _currentHunger = Mathf.Clamp(_currentHunger + _value, 0, _maxHunger);
+    }
 }
