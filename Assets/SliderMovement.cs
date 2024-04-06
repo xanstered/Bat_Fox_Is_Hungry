@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class SliderMovement : MonoBehaviour
 {
@@ -24,5 +25,9 @@ public class SliderMovement : MonoBehaviour
             Hunger -= 5 * Time.deltaTime;
         }
 
+        if (Hunger <= 0)
+        {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 }
