@@ -8,7 +8,6 @@ public class Food : MonoBehaviour
    
     [SerializeField] private float _hungerToReplenish;
 
-    public object AddHunger { get; internal set; }
 
     private void Awake()
     {
@@ -17,7 +16,7 @@ public class Food : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("bat")) return;
+        if (!other.gameObject.CompareTag("player")) return;
         var HungerManager = other.gameObject.GetComponent<HungerManager>();
 
         if (HungerManager != null) return;
