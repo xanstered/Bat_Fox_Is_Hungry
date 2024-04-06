@@ -15,7 +15,10 @@ public class Hunger : MonoBehaviour
     {
         currentHunger = Mathf.Clamp(currentHunger + _value, 0,  startingHunger);
     }
-
+    public void TakeDemage(float _damage)
+    {
+        currentHunger = Mathf.Clamp(currentHunger + _damage, 0, startingHunger);
+    }
     
    
 }
